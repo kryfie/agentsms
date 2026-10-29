@@ -3,3 +3,21 @@
 /* v2 iPhone workflow */
 .iphone-intro,.queue-panel,.test-panel{padding:24px;margin-bottom:16px}.phone-badges{display:flex;flex-wrap:wrap;gap:8px;margin:17px 0 0}.phone-badges span{font-size:11px;background:#1e3049;color:#bed1e5;border-radius:8px;padding:8px 10px}.queue-top{display:flex;align-items:start;justify-content:space-between;gap:16px;margin-bottom:18px}.queue-item{border-top:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;gap:12px;padding:13px 0}.queue-item strong{font-size:14px}.queue-item small{display:block;color:var(--muted);margin-top:5px;font-size:11px}.queue-empty{padding:24px;color:var(--muted);text-align:center;border:1px dashed var(--line);border-radius:10px}.test-panel .btn{margin:10px 8px 4px 0}.discover-selection{display:flex;gap:10px;align-items:center;margin:15px 24px 0;flex-wrap:wrap}.discover-selection small{font-size:11px;color:var(--muted)}.search-controls{flex-wrap:wrap;min-width:320px}.search-controls label{min-width:130px}.search-controls .btn{flex-basis:100%}
 @media(max-width:640px){.queue-item{align-items:flex-start;flex-direction:column}.queue-item .btn{width:100%}.discover-selection{margin:12px}.test-panel .btn{width:100%}.search-controls{min-width:0}.search-controls label{width:100%}}
+
+/* Discovery v3 */
+.google-tools{padding:22px 25px;margin-top:18px;background:#192840;border-color:#35516d}
+.google-title{display:flex;align-items:center;gap:10px;flex-wrap:wrap}.google-title h3{font-size:18px;margin:0}
+.google-tools p{font-size:12px;line-height:1.5;margin:9px 0 15px}
+.google-controls{display:flex;gap:12px;align-items:end;flex-wrap:wrap}.google-controls label{flex:1;min-width:210px;font-size:11px;color:var(--muted)}.google-controls input{margin-top:6px}
+.google-buttons{display:flex;gap:8px;flex-wrap:wrap}.google-buttons .btn{text-decoration:none}
+.micro-note{font-size:10px!important;color:var(--muted)!important;margin-bottom:0!important}
+.search-state{display:block!important;min-width:210px;background:#21344c;border:1px solid #45607c;border-radius:9px;padding:12px;color:#d8edff;font-size:12px;line-height:1.5;width:100%;margin-top:10px}
+.search-state.error{background:#442e34;border-color:#965764;color:#ffdce1}.search-state.success{background:#1c3e39;border-color:#427a68;color:#ddfff1}
+.discover{display:grid;grid-template-columns:minmax(0,1fr) minmax(270px,425px);align-items:start;gap:20px}.discover>div:first-child{max-width:none}
+.discover .search-controls{width:100%;display:flex;min-width:0;flex-wrap:wrap}.discover .search-controls label{min-width:120px}.discover .search-controls button{width:100%}
+.discover-selection{margin:0;grid-column:1/-1}.search-state{grid-column:1/-1;margin-top:0}
+.google-check{display:block;margin:8px 0 14px;font-size:11px}
+@media(max-width:850px){.discover{display:flex;flex-direction:column}.discover .search-controls{align-self:stretch}.discover-selection{align-self:stretch}.search-state{align-self:stretch}}
+@media(max-width:640px){.google-tools{padding:17px}.google-controls,.google-buttons{width:100%}.google-buttons .btn{flex:1;min-width:150px}.google-controls label{min-width:0;width:100%}.discover-selection{margin:0;width:100%}.discover .search-controls{flex-direction:column}.discover .search-controls label{width:100%}}
+
+#googleQuickButton{text-decoration:none;flex-basis:100%;width:100%}#discoverBtn{flex-basis:100%}

@@ -1,6 +1,17 @@
-# 1stMil — Lokalny Agent SMS / iPhone (v2)
+# 1stMil — Lokalny Agent SMS / iPhone (v3)
 
 Gotowa responsywna aplikacja HTML/CSS/JavaScript. Działa bez abonamentu, API SMS oraz aplikacji Skróty. Otwiera **systemową aplikację Wiadomości** na Twoim iPhonie z numerem i — jeśli iOS obsłuży parametr — wstępnie uzupełnioną treścią. **Sama nie wysyła SMS-ów.** Każdą wiadomość zatwierdzasz na telefonie.
+
+## Zmiany w v3 (29.10.2026)
+
+- Naprawa doświadczenia wyszukiwania: stan ładowania jest widoczny, przycisk pokazuje „Szukam firm”, czytelne błędy i automatyczne próby na 3 serwerach Overpass. Zapytania przechodzą przez GET, bez preflight POST. Dzięki ograniczeniu do firm z publicznym numerem OSM pobiera mniej nieprzydatnych danych.
+- Nowy widoczny przycisk **„Szukaj w Google Maps”** oraz sekcja **Google Maps / Google Search** z gotowymi wyszukiwaniami według wybranego miasta/branży, z możliwością wpisania własnej frazy. Nie wymaga konta Google Maps Platform ani klucza API. Przekierowuje do Google; **nie pobiera Google firm do tabeli automatycznie**.
+- Przy wynikach OSM dostępne „Sprawdź w Google Maps”.
+- Wymuszenie pobrania nowego `app.js` / `style.css` przez parametr wersji, aby uniknąć starego kodu z cache Safari/Chrome.
+- Zachowanie wcześniejszej bazy lokalnej (`localStorage` ma te same klucze). Przed aktualizacją najlepiej wyeksportować CSV.
+- Serwery Overpass mogą czasowo być niedostępne; testy automatyczne z mockiem nie gwarantują dostępności na żywo na iPhonie.
+
+**Dlaczego Google nie wgrywa firm automatycznie?** Oficjalne Google Places API wymaga klucza, konta rozliczeniowego i przestrzegania ograniczeń na przechowywanie wyników. Sam Google Search/Google Maps nie jest publicznym API do bezpłatnego pobierania telefonów. W v3 Google jest narzędziem do ręcznego sprawdzania, a OSM do automatycznego importu. Kod z kluczem Google API nie powinien być umieszczany w publicznym `app.js` GitHub Pages.
 
 ## Co działa
 
@@ -20,7 +31,7 @@ Gotowa responsywna aplikacja HTML/CSS/JavaScript. Działa bez abonamentu, API SM
 3. Otwórz adres witryny GitHub Pages w Safari na iPhonie. W Safari można wybrać **Udostępnij → Dodaj do ekranu początkowego**.
 4. W zakładce **Ustawienia** wpisz swoje imię, numer telefonu i ewentualnie portfolio.
 5. W zakładce **iPhone SMS** kliknij **„Wypróbuj SMS na własny numer”**. Sprawdź, czy w aplikacji Wiadomości pojawia się zarówno numer, jak i treść. To test wymagający Twojego ręcznego wysłania.
-6. Wyszukaj firmy, dodaj kandydatów. Po uzyskaniu ich faktycznej zgody marketingowej wpisz ją do karty kontaktu (z datą i źródłem). Wtedy trafią do kolejki **iPhone SMS**.
+6. Wyszukaj firmy przez OSM lub otwórz Google Maps/Search, ręcznie zweryfikuj wybrane kontakty i dodaj kandydatów. Po uzyskaniu ich faktycznej zgody marketingowej wpisz ją do karty kontaktu (z datą i źródłem). Wtedy trafią do kolejki **iPhone SMS**.
 7. Kliknij **„Przygotuj SMS” → „Otwórz w Wiadomościach”**, zweryfikuj numer i tekst, następnie samodzielnie naciśnij **Wyślij**. Po powrocie do panelu oznacz jako wysłany.
 
 ### Jeśli treść nie uzupełni się sama
