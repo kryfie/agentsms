@@ -1,0 +1,7 @@
+# Do not commit personal data, exported lead files or API credentials.
+.env
+*.csv
+kontakty*.json
+leads*.json
+sent-log*.json
+__pycache__/
